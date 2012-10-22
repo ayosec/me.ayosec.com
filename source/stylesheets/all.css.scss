@@ -1,0 +1,48 @@
+@import "compass/css3";
+@import "../images/?*-gray.png";
+
+
+html, body {
+  height: 100%;
+  background-color: #474747;
+  background: repeating-linear-gradient(45deg, #404040, #474747 10px, #404040 10px, #515151 10px, #454545 10px);
+}
+
+
+.transition-opacity {
+  @include transition-property(opacity);
+  @include transition-duration(500ms); 
+}
+
+.front {
+  height: 100%;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+
+  div {
+    display: table-cell;
+    vertical-align: middle;
+
+    text-align: center;
+
+    a { display: inline-block; }
+  }
+
+  a:hover img {
+    @extend .transition-opacity;
+    opacity: 1;
+  }
+
+  a img {
+    @extend .transition-opacity;
+    opacity: 0;
+    border-radius: 20px;
+  }
+
+  div.tumblr  a { @include images-sprite(tumblr-gray); }
+  div.flickr  a { @include images-sprite(flickr-gray); }
+  div.github  a { @include images-sprite(github-gray); }
+  div.twitter a { @include images-sprite(twitter-gray); }
+
+}
