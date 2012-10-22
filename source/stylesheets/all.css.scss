@@ -8,7 +8,6 @@ html, body {
   background: repeating-linear-gradient(45deg, #404040, #474747 10px, #404040 10px, #515151 10px, #454545 10px);
 }
 
-
 .transition-opacity {
   @include transition-property(opacity);
   @include transition-duration(500ms); 
@@ -17,15 +16,9 @@ html, body {
 .front {
   height: 100%;
   width: 100%;
-  display: table;
-  table-layout: fixed;
 
   div {
-    display: table-cell;
-    vertical-align: middle;
-
     text-align: center;
-
     a { display: inline-block; }
   }
 
@@ -45,4 +38,32 @@ html, body {
   div.github  a { @include images-sprite(github-gray); }
   div.twitter a { @include images-sprite(twitter-gray); }
 
+}
+
+
+@media screen and (max-width: 549px) {
+
+}
+
+@media screen and (min-width: 550px) and (max-width: 1049px) {
+  .front {
+    padding-top: 100px;
+
+    div {
+      display: inline-block;
+      width: 49%;
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .front {
+    display: table;
+    table-layout: fixed;
+
+    div {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
 }
